@@ -1,15 +1,12 @@
 # Template for AX and TIA Portal workflow
-
-## Install template
-
 ## Setup template
 
 1. create a new library project from template 
       ```cli
       apax create @simatic-ax/tiax_template -registry https://npm.pkg.github.com
       ```
-1. If not done login to the AX registry
-1. If not done login to the GitHub registry
+1. If not done, login to the AX registry
+1. If not done, login to the GitHub registry
 1. Install the dependencies
 
    ```cli
@@ -24,9 +21,13 @@
    
    or run script `updateall`
 
-   ![](doc/runscript.png)
+      1. Select `Run Script`
+   
+            ![](doc/runscript.png)
 
-   ![](doc/select_updateall.png)
+      2. Select `updateall`
+      
+            ![](doc/select_updateall.png)
 
 1. Open the .env File and adapt your installation path of the file `Siemens.Simatic.Lang.Library.Importer.exe`
 
