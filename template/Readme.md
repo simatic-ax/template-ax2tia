@@ -1,0 +1,74 @@
+# Template for AX and TIA Portal workflow
+
+## Install template
+
+## Setup template
+
+1. create a new library project from template 
+      ```cli
+      apax create myApp tiax_template
+      ```
+1. If not done login to the AX registry
+1. If not done login to the GitHub registry
+1. Install the dependencies
+
+   ```cli
+   apax install -L 
+   ```
+
+   or with update of all packages implicitly 
+
+   ```cli
+   apax update -a
+   ```
+   
+   or run script `updateall`
+
+   ![](doc/runscript.png)
+
+   ![](doc/select_updateall.png)
+
+1. Open the .env File and adapt your installation path of the file `Siemens.Simatic.Lang.Library.Importer.exe`
+
+      Default Path: `D:\TIA\DS\1406_18.00.00.00_15.01.0001\Step7Professional\bin`
+      
+1. Optionally adapt the snippets to your namespace
+
+      Adapt the snippet `./snippets/usingNamespace.json`
+
+      ```json
+      {
+         "USINGAxUnit": {
+         "scope": "javascript,typescript,st",
+         "prefix": ["USING DemoLibrary"],  // adapt prefix
+         "body": [
+            "USING Simatic.Ax.DemoLibrary;", // adapt your namespace
+            "$0"
+         ],
+         "description": "Create USING for your library;"
+         }    
+      }
+      ```
+
+      and adapt the snippet `./snippets/namespacesupport.json`
+
+      ```json 
+            "NamespaceSupport": {
+            "scope": "javascript,typescript,st",
+            "prefix": ["CreateNamespace for DemoLibrary"], //adapt prefix
+            "body": [
+                  "NAMESPACE Simatic.Ax.DemoLibrary", //adapt your namespace
+                  "\t$0",
+                  "END_NAMESPACE"
+            ],
+            "description": "Creates an namespace template"
+            }    
+      ```
+
+## Create the library
+
+1. Export the library to a readable interchange format
+1. Create a TIA Portal Library
+1. Open the TIA Portal Library in TIA Portal
+1. Create the machine application by using library elements
+ 

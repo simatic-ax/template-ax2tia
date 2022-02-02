@@ -1,0 +1,12 @@
+{
+    "NamespaceSupport": {
+    "scope": "javascript,typescript,st",
+    "prefix": ["CreateNamespace for DemoLibrary"],
+    "body": [
+        "NAMESPACE Simatic.Ax.DemoLibrary",
+        "\t$0",
+        "END_NAMESPACE"
+    ],
+    "description": "Creates an namespace template"
+    }    
+}

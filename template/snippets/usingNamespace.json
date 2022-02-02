@@ -1,0 +1,11 @@
+{
+    "USINGAxUnit": {
+    "scope": "javascript,typescript,st",
+    "prefix": ["USING DemoLibrary"],
+    "body": [
+        "USING Simatic.Ax.DemoLibrary;",
+        "$0"
+    ],
+    "description": "Create USING for your library;"
+    }    
+}

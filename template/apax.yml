@@ -1,0 +1,38 @@
+name: tiax_template
+version: 0.0.0
+type: lib
+targets:
+  - "1500"
+  - "plcsim"
+  - axunit-llvm
+devDependencies:
+  "@ax/sdk": 1.0.138
+  "@ax/ax2tia": 1.0.32
+  "@simatic-ax/snippetscollection": 0.0.6
+variables:
+  LIB_NAME: "tiax_template.lib"
+  LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
+  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
+  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="D:\TIA\DS\1406_18.00.00.00_15.01.0001\Step7Professional\bin"
+scripts:
+  updateall:
+    - apax update -a
+  cleanup:
+    - echo delete artifacts
+    - rm ./bin/$LIBRARY_DOCUMENTS_FOLDER -r -f
+    - rm ./bin/$GLOBAL_LIBRARY_PATH -r -f
+  convertlib:
+    - echo st2tia
+    - ax2tia convert bin/plcsim/$LIB_NAME bin/$LIBRARY_DOCUMENTS_FOLDER
+  importlib:
+    - echo import lib
+    - $TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe -i
+      ./bin/$LIBRARY_DOCUMENTS_FOLDER -o ./bin/$GLOBAL_LIBRARY_PATH -r
+  createlib:
+    - apax cleanup
+    - apax build
+    - apax convertlib
+    - apax importlib
+
+registries:
+  '@simatic-ax': 'https://npm.pkg.github.com/'
