@@ -3,7 +3,7 @@
 
 1. create a new library project from template 
       ```cli
-      apax create @simatic-ax/tiax_template -registry https://npm.pkg.github.com
+      apax create @simatic-ax/tiax -registry https://npm.pkg.github.com
       ```
 1. If not done, login to the AX registry
 1. If not done, login to the GitHub registry
