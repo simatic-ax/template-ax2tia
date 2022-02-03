@@ -9,7 +9,7 @@
 
 1. create a new library project from template 
       ```cli
-      apax create @simatic-ax/tiax -registry https://npm.pkg.github.com
+      apax create @simatic-ax/tiax --registry https://npm.pkg.github.com
       ```
 1. Install the dependencies
 
