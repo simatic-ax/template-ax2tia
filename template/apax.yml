@@ -10,7 +10,7 @@ devDependencies:
   "@ax/ax2tia": 1.0.32
   "@simatic-ax/snippetscollection": 0.0.6
 variables:
-  LIB_NAME: "tiax_template.lib"
+  LIB_NAME: "tiax_template.lib"  # Replace it with the name of the project 
   LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="D:\TIA\DS\1406_18.00.00.00_15.01.0001\Step7Professional\bin"

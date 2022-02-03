@@ -33,6 +33,10 @@
       
             ![](doc/select_updateall.png)
 
+1. Open the `apax.yml` and modify the variable vor `LIB_NAME` (line 13). The value of the parameter must be equal to the name of the project.
+
+      ![](doc/name.png)
+
 1. Open the .env File and adapt your installation path of the file `Siemens.Simatic.Lang.Library.Importer.exe`
 
       Default Path: `D:\TIA\DS\1406_18.00.00.00_15.01.0001\Step7Professional\bin`
@@ -72,8 +76,9 @@
 
 ## Create the library
 
-1. Export the library to a readable interchange format
-1. Create a TIA Portal Library
-1. Open the TIA Portal Library in TIA Portal
-1. Create the machine application by using library elements
+Execute the command:
+
+```
+apax createlib
+```
  
