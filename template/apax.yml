@@ -13,21 +13,22 @@ variables:
   LIB_NAME: "tiax_template.lib"  # Replace it with the name of the project 
   LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
-  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="D:\TIA\DS\1406_18.00.00.00_15.01.0001\Step7Professional\bin"
+  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
 scripts:
   updateall:
+    - apax install -L
     - apax update -a
   cleanup:
     - echo delete artifacts
-    - rm ./bin/$LIBRARY_DOCUMENTS_FOLDER -r -f
-    - rm ./bin/$GLOBAL_LIBRARY_PATH -r -f
+    - rm "./bin/$LIBRARY_DOCUMENTS_FOLDER" -r -f
+    - rm "./bin/$GLOBAL_LIBRARY_PATH" -r -f
   convertlib:
     - echo st2tia
-    - ax2tia convert bin/plcsim/$LIB_NAME bin/$LIBRARY_DOCUMENTS_FOLDER
+    - ax2tia convert "bin/plcsim/$LIB_NAME" "bin/$LIBRARY_DOCUMENTS_FOLDER"
   importlib:
-    - echo import lib
-    - $TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe -i
-      ./bin/$LIBRARY_DOCUMENTS_FOLDER -o ./bin/$GLOBAL_LIBRARY_PATH -r
+    - |
+      echo import lib
+      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "./bin/$LIBRARY_DOCUMENTS_FOLDER" -o "./bin/$GLOBAL_LIBRARY_PATH" -r
   createlib:
     - apax cleanup
     - apax build

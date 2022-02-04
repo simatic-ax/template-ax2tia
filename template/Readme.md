@@ -37,10 +37,16 @@
 
       ![](doc/name.png)
 
-1. Open the .env File and adapt your installation path of the file `Siemens.Simatic.Lang.Library.Importer.exe`
+1. Set the path to the `Simatic.Lang.Library.Importer.exe`  
+   
+      It's required, that you set the path to the `Simatic.Lang.Library.Importer.exe`. The path depends on your own TIA Portal installation and it might be differ to the default path:
 
-      Default Path: `D:\TIA\DS\1406_18.00.00.00_15.01.0001\Step7Professional\bin`
+      `C:\Program Files\Siemens\Automation\Portal V18\Bin`
+
+      To change it, open the File `.env` and modify the following entry to your installation path:
       
+      `TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"`
+
 1. Optionally adapt the snippets to your namespace
 
       Adapt the snippet `./snippets/usingNamespace.json`
@@ -76,9 +82,15 @@
 
 ## Create the library
 
-Execute the command:
+The script `createlib` execute the following steps:
+
+- cleanup old library artifacts 
+- compile the ST code (apax build)
+- generate the handover library documents (st2tia)
+- generate the TIA Portal Library .al18 in the folder `bin\TIAPortalGlobalLibrary`
+
+To execute the script, enter `apax createlib' in the terminal
 
 ```
 apax createlib
 ```
- 
