@@ -6,7 +6,7 @@ targets:
   - "plcsim"
   - axunit-llvm
 devDependencies:
-  "@ax/sdk": 1.0.138
+  "@ax/sdk": 1.0.144
   "@ax/ax2tia": 1.0.32
   "@simatic-ax/snippetscollection": 0.0.6
 variables:
@@ -16,8 +16,8 @@ variables:
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
 scripts:
   updateall:
-    - apax install -L
-    - apax update -a
+    - apax install --update-lockfile
+    - apax update --all
   cleanup:
     - echo delete artifacts
     - rm "./bin/$LIBRARY_DOCUMENTS_FOLDER" -r -f
@@ -28,7 +28,7 @@ scripts:
   importlib:
     - |
       echo import lib
-      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "./bin/$LIBRARY_DOCUMENTS_FOLDER" -o "./bin/$GLOBAL_LIBRARY_PATH" -r
+      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" --input "./bin/$LIBRARY_DOCUMENTS_FOLDER" --output "./bin/$GLOBAL_LIBRARY_PATH" -r
   createlib:
     - apax cleanup
     - apax build

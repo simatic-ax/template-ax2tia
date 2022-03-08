@@ -1,9 +1,9 @@
 name: '@simatic-ax/template-tiax'
-version: 0.0.6
+version: 0.0.7
 author: Siemens AG
 type: generic
 scripts:
-  publishlib:
+  publishpackage:
     - apax publish --package *.apax.tgz --registry 'https://npm.pkg.github.com/'
     - rm *.apax.tgz -f
   createpackage:
