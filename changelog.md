@@ -8,3 +8,10 @@ Version 0.0.1
 Version 0.0.7
 - Make the script parameter more readable
 - Update SDK to 1.0.144
+
+## 2022-06-03
+Version 0.0.9
+- Add scripts `createpackage` and `publishlib`
+- Set the name in apax.yml while workspace creation
+
+

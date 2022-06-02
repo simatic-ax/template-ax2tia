@@ -1,5 +1,5 @@
-name: '@simatic-ax/template-tiax'
-version: 0.0.7
+name: '@simatic-ax/template-ax2tia'
+version: 0.0.9
 author: Siemens AG
 type: generic
 scripts:

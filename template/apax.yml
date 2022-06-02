@@ -1,17 +1,14 @@
-name: tiax_template
+name: apax-package-name-d7b4b031
 version: 0.0.0
 type: lib
 targets:
-  - "1500"
   - "plcsim"
   - axunit-llvm
 devDependencies:
   "@ax/sdk": 1.0.165
   "@ax/ax2tia": 2.1.6
-  "@simatic-ax/snippetscollection": 0.0.7
+  "@simatic-ax/snippetscollection": 0.0.12
 variables:
-  LIB_NAME: "tiax_template.lib" # Replace it with the name of the project + .lib
-  LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
 scripts:
@@ -24,16 +21,29 @@ scripts:
     - rm "./bin/$GLOBAL_LIBRARY_PATH" -r -f
   convertlib:
     - echo st2tia
-    - ax2tia convert "bin/plcsim/$LIB_NAME" "bin/$LIBRARY_DOCUMENTS_FOLDER"
+    - ax2tia convert bin/plcsim/*.lib "bin/$LIBRARY_DOCUMENTS_FOLDER"
   importlib:
     - |
       echo import lib
-      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" --input "./bin/$LIBRARY_DOCUMENTS_FOLDER" --output "./bin/$GLOBAL_LIBRARY_PATH" -r
+      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "./bin/HandoverLibraryDocuments" -o "./bin/$GLOBAL_LIBRARY_PATH" -r
   createlib:
     - apax cleanup
     - apax build
     - apax convertlib
     - apax importlib
-
+  publishlib:
+    - apax publish --package *.apax.tgz --registry 'https://npm.pkg.github.com/'
+    - rm *.apax.tgz -f
+  createpackage:
+    - apax build
+    - apax version $1
+    - apax convertlib
+    - apax pack
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
+files:
+  - 'README.md'
+  - 'LICENSE.md'
+  - 'changelog.md'
+  - 'doc'
+  - 'bin/HandoverLibraryDocuments'

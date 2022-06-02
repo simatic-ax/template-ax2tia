@@ -547,8 +547,8 @@
     "integrity": "sha512-k64xchoCHD3qAkiNy7PF72FVrj+KrS1MO2ly1CDZGICOhyXkx6x2ti79UF3ruqNOHM2IUcJRjJGKR7qMWtG33A=="
   },
   "@simatic-ax/snippetscollection": {
-    "version": "0.0.7",
-    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/snippetscollection/0.0.7/a2c644d47da07073c0593b5c5577d2b6ddcf833f26a939b5320111e63cf32a94",
-    "integrity": "sha512-Bn/PknqJRasVwqwpmK9K710/NY2zStGYxv9NhZiJJhjIEmRWBDyVGuqjAA5J/RN+KOiPHeiodEa5CvPl8+eQlA=="
+    "version": "0.0.12",
+    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/snippetscollection/0.0.12/61576de82fb6596864c89edb05820679aeb0c21e7bffcd637d5e5ae33c18b0b0",
+    "integrity": "sha512-+Mlkh8FFU17l8JZWkY9az6W0Sp1u50NiP5AmusBO86DzKN74hGc23/kYVyzxpmwNhrTymPFSumAqq6DnPmQdnw=="
   }
 }
