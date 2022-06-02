@@ -1,5 +1,8 @@
-# Template for AX and TIA Portal workflow
-## Setup template
+# Template for the TIAX workflow
+
+This project template contains some predefined scripts which make your TIAX workflow easier. 
+
+## TIAX Workflow with this project template
 
 1. If not done, login to the AX registry
 
@@ -7,19 +10,15 @@
    
     More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/doc/personalaccesstoken.md)
 
-1. create a new library project from template 
-      ```cli
-      apax create @simatic-ax/tiax --registry https://npm.pkg.github.com
-      ```
 1. Install the dependencies
 
-   ```cli
+   ```sh
    apax install -L 
    ```
 
    or with update of all packages implicitly 
 
-   ```cli
+   ```sh
    apax update -a
    ```
    
@@ -33,9 +32,6 @@
       
             ![](doc/select_updateall.png)
 
-1. Open the `apax.yml` and modify the variable vor `LIB_NAME` (line 13). The value of the parameter must be equal to the name of the project.
-
-      ![](doc/name.png)
 
 1. Set the path to the `Simatic.Lang.Library.Importer.exe`  
    
@@ -91,6 +87,6 @@ The script `createlib` execute the following steps:
 
 To execute the script, enter `apax createlib' in the terminal
 
-```
+```sh
 apax createlib
 ```
