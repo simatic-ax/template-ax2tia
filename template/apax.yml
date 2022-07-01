@@ -5,9 +5,9 @@ targets:
   - "plcsim"
   - axunit-llvm
 devDependencies:
-  "@ax/sdk": 1.0.165
-  "@ax/ax2tia": 2.1.6
-  "@simatic-ax/snippetscollection": 0.0.12
+  "@ax/sdk": 1.0.175
+  "@ax/ax2tia": 3.1.5
+  "@simatic-ax/snippetscollection": 0.0.13
 variables:
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
