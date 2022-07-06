@@ -1,5 +1,5 @@
 name: apax-package-name-d7b4b031
-version: 0.0.0
+version: 0.0.0-placeholder
 type: lib
 targets:
   - "plcsim"
@@ -25,20 +25,12 @@ scripts:
   importlib:
     - |
       echo import lib
-      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "./bin/HandoverLibraryDocuments" -o "./bin/$GLOBAL_LIBRARY_PATH" -r
+      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "./bin/HandoverLibraryDocuments" -o "./bin/$GLOBAL_LIBRARY_PATH"
   createlib:
     - apax cleanup
     - apax build
     - apax convertlib
     - apax importlib
-  publishlib:
-    - apax publish --package *.apax.tgz --registry 'https://npm.pkg.github.com/'
-    - rm *.apax.tgz -f
-  createpackage:
-    - apax build
-    - apax version $1
-    - apax convertlib
-    - apax pack
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 files:
