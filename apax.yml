@@ -1,7 +1,14 @@
 name: '@simatic-ax/template-ax2tia'
-version: 0.0.0-placeholder
+version: 0.0.10
 author: Siemens AG
 type: generic
+scripts:
+  publishpackage:
+    - apax publish --package *.apax.tgz --registry 'https://npm.pkg.github.com/'
+    - rm *.apax.tgz -f
+  createpackage:
+    - apax version $1
+    - apax pack
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
 files:
