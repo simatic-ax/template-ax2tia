@@ -9,7 +9,7 @@ env:
   SCOPE: simatic-ax
   ACTIONS_REPO: simatic-ax/actions
   ACTIONS_LOCAL: ./actions
-  VERSIONING_TOOL_REPO: simatic-ax/simatic_versioning
+  VERSIONING_TOOL_REPO: simatic-ax/template-ax2tia
 
 jobs:
   versioning:
