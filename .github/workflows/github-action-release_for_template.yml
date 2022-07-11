@@ -10,7 +10,6 @@ env:
   ACTIONS_REPO: simatic-ax/actions
   ACTIONS_LOCAL: ./actions
   VERSIONING_TOOL_REPO: simatic-ax/template-ax2tia
-
 jobs:
   versioning:
     name: "Bump the version of the package according to the conventional commit"
