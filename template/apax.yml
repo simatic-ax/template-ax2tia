@@ -1,4 +1,4 @@
-name: apax-package-name-d7b4b031
+name: 'apax-package-name-d7b4b031'
 version: 0.0.0-placeholder
 type: lib
 targets:
@@ -6,7 +6,7 @@ targets:
   - axunit-llvm
 devDependencies:
   "@ax/sdk": 1.0.181
-  "@ax/ax2tia": 3.1.5
+  "@ax/ax2tia": 3.1.23
   "@simatic-ax/snippetscollection": 0.0.13
 variables:
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
