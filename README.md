@@ -9,5 +9,5 @@
 
 1. create a new library project from template 
       ```cli
-      apax create @simatic-ax/tiax --registry https://npm.pkg.github.com
+      apax create @simatic-ax/ax2tia --registry https://npm.pkg.github.com
       ```
