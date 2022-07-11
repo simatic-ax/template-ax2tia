@@ -5,11 +5,11 @@ on:
       - release
 
 env:
-  PROJECT_NAME: template-library
+  PROJECT_NAME: template-ax2tia
   SCOPE: simatic-ax
   ACTIONS_REPO: simatic-ax/actions
   ACTIONS_LOCAL: ./actions
-  VERSIONING_TOOL_REPO: simatic-ax/template-ax2tia
+  VERSIONING_TOOL_REPO: simatic-ax/simatic_versioning
 jobs:
   versioning:
     name: "Bump the version of the package according to the conventional commit"
