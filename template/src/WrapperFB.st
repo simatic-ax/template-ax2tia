@@ -8,7 +8,6 @@ NAMESPACE Simatic.Ax.DemoLibrary
         END_VAR
         VAR
            _inst : ExampleClass; 
-           _cyclesCounted : INT;
         END_VAR
 
         _inst.RunCyclic();

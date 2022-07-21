@@ -5,10 +5,12 @@ targets:
   - "plcsim"
   - axunit-llvm
 devDependencies:
-  "@ax/sdk": 1.0.181
+  "@ax/sdk": 2.0.3
   "@ax/ax2tia": 3.1.23
   "@simatic-ax/snippetscollection": 0.0.13
 variables:
+  APAX_BUILD_ARGS:
+    - "--debug"
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
   LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
@@ -19,10 +21,9 @@ scripts:
   cleanup:
     - echo delete artifacts
     - rm "./bin/$LIBRARY_DOCUMENTS_FOLDER" -r -f
-    - rm "./bin/$GLOBAL_LIBRARY_PATH" -r -f
   convertlib:
     - echo st2tia
-    - ax2tia convert -i bin/plcsim/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
+    - ax2tia -i bin/plcsim/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
   importlib:
     - |
       echo import lib
