@@ -9,6 +9,8 @@ devDependencies:
   "@ax/ax2tia": 3.1.23
   "@simatic-ax/snippetscollection": 0.0.13
 variables:
+  APAX_BUILD_ARGS:
+    - "--debug"
   GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
   LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
   # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
