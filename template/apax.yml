@@ -22,7 +22,7 @@ scripts:
     - rm "./bin/$GLOBAL_LIBRARY_PATH" -r -f
   convertlib:
     - echo st2tia
-    - ax2tia convert -i bin/plcsim/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
+    - ax2tia -i bin/plcsim/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
   importlib:
     - |
       echo import lib
