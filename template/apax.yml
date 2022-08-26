@@ -5,8 +5,8 @@ targets:
   - "plcsim"
   - axunit-llvm
 devDependencies:
-  "@ax/sdk": 2.0.3
-  "@ax/ax2tia": 3.1.23
+  "@ax/sdk": 2.0.4
+  "@ax/ax2tia": 3.1.25
   "@simatic-ax/snippetscollection": 0.0.13
 variables:
   APAX_BUILD_ARGS:
