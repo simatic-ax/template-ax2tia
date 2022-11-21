@@ -41,7 +41,7 @@ This project template contains some predefined scripts which make your TIAX work
 
       To change it, open the File `.env` and modify the following entry to your installation path:
       
-      `TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"`
+      `TIA_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"`
 
 1. Optionally adapt the snippets to your namespace
 
