@@ -1,40 +1,45 @@
-name: 'apax-package-name-d7b4b031'
+# General information
+name: '@simatic-ax/apax-package-name-d7b4b031'
 version: 0.0.0-placeholder
+# Description will be displayed in the apax extension
+description: <add your description here, which will be shown in the apax extension>
 type: lib
+#URL to the repository
+repository:
+  type: git
+  url: https://github.com/simatic-ax/apax-package-name-d7b4b031
+# Environment variables
+variables:
+   # an arbitrary directory that can be chosen freely
+   PATH_NAME: "./bin/handover-folder"
+   # you can change the predefined output path where the TIA Portal library will be generated
+   TIA_GLOBAL_LIB_PATH: "./TIAPortalLibrary"
+   # remove, if you do not want to allow debugging of your code
+   APAX_BUILD_ARGS:
+     - "--debug"
+  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
 targets:
-  - "plcsim"
-  - axunit-llvm
+  - '1500'
+  - 'axunit-llvm'
+  - 'llvm'
+# Dependencies
 devDependencies:
   "@ax/sdk": 3.0.2
   "@ax/ax2tia": 4.0.5
   "@simatic-ax/snippetscollection": 0.0.14
-variables:
-  APAX_BUILD_ARGS:
-    - "--debug"
-  GLOBAL_LIBRARY_PATH: "TIAPortalGlobalLibrary"
-  LIBRARY_DOCUMENTS_FOLDER: "HandoverLibraryDocuments"
-  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
+# Apax scripts
 scripts:
-  updateall:
-    - apax install --update-lockfile
-    - apax update --all
-  cleanup:
-    - echo delete artifacts
-    - rm "./bin/$LIBRARY_DOCUMENTS_FOLDER" -r -f
-  convertlib:
-    - echo st2tia
-    - ax2tia -i bin/plcsim/*.lib -o "bin/$LIBRARY_DOCUMENTS_FOLDER"
-  importlib:
-    - |
-      echo import lib
-      "$TIA_PORTAL_INSTALL_PATH/Siemens.Simatic.Lang.Library.Importer.exe" -i "./bin/HandoverLibraryDocuments" -o "./bin/$GLOBAL_LIBRARY_PATH"
-  createlib:
-    - apax cleanup
-    - apax build
-    - apax convertlib
-    - apax importlib
+  # set the path to your local TIA Portal installation in the .env file
+   export-tialib: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
+   import-tialib: '"$TIA_INSTALL_PATH\\bin\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
+   create-tialib:
+      - apax build
+      - apax export-tialib
+      - apax import-tialib
+# Registry information, where the package will be published/consumed
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
+# Files, which will be shipped with the library
 files:
   - 'README.md'
   - 'LICENSE.md'
