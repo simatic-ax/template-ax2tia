@@ -1,13 +1,13 @@
 # Template for the TIAX workflow
 
-This project template contains some predefined scripts which make your TIAX workflow easier. 
+This project template contains some predefined scripts which make your TIAX workflow easier.
 
 ## TIAX Workflow with this project template
 
 1. If not done, login to the AX registry
 
 1. If not done, login to the GitHub registry
-   
+
     More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/doc/personalaccesstoken.md)
 
 1. Install the dependencies
@@ -16,31 +16,30 @@ This project template contains some predefined scripts which make your TIAX work
    apax install -L 
    ```
 
-   or with update of all packages implicitly 
+   or with update of all packages implicitly
 
    ```sh
    apax update -a
    ```
-   
+
    or run script `updateall`
 
       1. Select `Run Script`
-   
-            ![](doc/runscript.png)
+
+            ![img](doc/runscript.png)
 
       2. Select `updateall`
-      
-            ![](doc/select_updateall.png)
 
+            ![img](doc/select_updateall.png)
 
 1. Set the path to the `Simatic.Lang.Library.Importer.exe`  
-   
+
       It's required, that you set the path to the `Simatic.Lang.Library.Importer.exe`. The path depends on your own TIA Portal installation and it might be differ to the default path:
 
       `C:\Program Files\Siemens\Automation\Portal V18\Bin`
 
       To change it, open the File `.env` and modify the following entry to your installation path:
-      
+
       `TIA_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"`
 
 1. Optionally adapt the snippets to your namespace
@@ -63,7 +62,7 @@ This project template contains some predefined scripts which make your TIAX work
 
       and adapt the snippet `./snippets/namespacesupport.json`
 
-      ```json 
+      ```json
             "NamespaceSupport": {
             "scope": "javascript,typescript,st",
             "prefix": ["CreateNamespace for DemoLibrary"], //adapt prefix
@@ -80,7 +79,7 @@ This project template contains some predefined scripts which make your TIAX work
 
 The script `createlib` execute the following steps:
 
-- cleanup old library artifacts 
+- cleanup old library artifacts
 - compile the ST code (apax build)
 - generate the handover library documents (st2tia)
 - generate the TIA Portal Library .al18 in the folder `bin\TIAPortalGlobalLibrary`
