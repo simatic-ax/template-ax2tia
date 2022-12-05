@@ -10,14 +10,14 @@ repository:
   url: https://github.com/simatic-ax/apax-package-name-d7b4b031
 # Environment variables
 variables:
-   # an arbitrary directory that can be chosen freely
-   PATH_NAME: "./bin/handover-folder"
-   # you can change the predefined output path where the TIA Portal library will be generated
-   TIA_GLOBAL_LIB_PATH: "./TIAPortalLibrary"
-   # remove, if you do not want to allow debugging of your code
-   APAX_BUILD_ARGS:
-     - "--debug"
-  # Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
+  # an arbitrary directory that can be chosen freely
+  PATH_NAME: "./bin/handover-folder"
+  # you can change the predefined output path where the TIA Portal library will be generated
+  TIA_GLOBAL_LIB_PATH: "./TIAPortalLibrary"
+  # remove, if you do not want to allow debugging of your code
+  APAX_BUILD_ARGS:
+    - "--debug"
+# Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
 targets:
   - '1500'
   - 'axunit-llvm'
@@ -26,16 +26,17 @@ targets:
 devDependencies:
   "@ax/sdk": 3.0.2
   "@ax/ax2tia": 4.0.5
-  "@simatic-ax/snippetscollection": 0.0.14
+  "@simatic-ax/snippetscollection": 0.0.15
 # Apax scripts
 scripts:
   # set the path to your local TIA Portal installation in the .env file
-   export-tialib: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
-   import-tialib: '"$TIA_INSTALL_PATH\\bin\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
-   create-tialib:
-      - apax build
-      - apax export-tialib
-      - apax import-tialib
+  export-tialib: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
+  import-tialib: '"$TIA_INSTALL_PATH\\Siemens.Simatic.Lang.Library.Importer.exe"
+    -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
+  create-tialib:
+    - apax build
+    - apax export-tialib
+    - apax import-tialib
 # Registry information, where the package will be published/consumed
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
