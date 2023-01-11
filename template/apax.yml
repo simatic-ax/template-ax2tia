@@ -1,6 +1,6 @@
 # General information
 name: '@simatic-ax/apax-package-name-d7b4b031'
-version: 0.0.0-placeholder
+version: 0.0.1
 # Description will be displayed in the apax extension
 description: <add your description here, which will be shown in the apax extension>
 type: lib
@@ -13,7 +13,7 @@ variables:
   # an arbitrary directory that can be chosen freely
   PATH_NAME: "./bin/handover-folder"
   # you can change the predefined output path where the TIA Portal library will be generated
-  TIA_GLOBAL_LIB_PATH: "./TIAPortalLibrary"
+  TIA_GLOBAL_LIB_PATH: "./apax-package-name-d7b4b031"
   # remove, if you do not want to allow debugging of your code
   APAX_BUILD_ARGS:
     - "--debug"
