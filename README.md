@@ -6,9 +6,9 @@
 
 1. If not done, login to the GitHub registry
 
-    More information you'll find [here](https://github.com/simatic-ax/.sharedstuff/blob/main/doc/personalaccesstoken.md)
+    More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/docs/personalaccesstoken.md)
 
-1. create a new library project from template
+1. create a new library project from template (local IDE)
 
       ```cli
       apax create @simatic-ax/ax2tia --registry https://npm.pkg.github.com

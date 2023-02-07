@@ -1,6 +1,6 @@
 # General information
 name: '@simatic-ax/apax-package-name-d7b4b031'
-version: 0.0.0-placeholder
+version: 0.0.1
 # Description will be displayed in the apax extension
 description: <add your description here, which will be shown in the apax extension>
 type: lib
@@ -31,8 +31,7 @@ devDependencies:
 scripts:
   # set the path to your local TIA Portal installation in the .env file
   export-tialib: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
-  import-tialib: '"$TIA_INSTALL_PATH\\bin\\Siemens.Simatic.Lang.Library.Importer.exe"
-    -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
+  import-tialib: '"$TIA_INSTALL_PATH\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
   create-tialib:
     - apax build
     - apax export-tialib
