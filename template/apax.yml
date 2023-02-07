@@ -24,15 +24,14 @@ targets:
   - 'llvm'
 # Dependencies
 devDependencies:
-  "@ax/sdk": 3.0.2
-  "@ax/ax2tia": 4.0.5
+  "@ax/sdk": 3.0.10
+  "@ax/ax2tia": 4.4.12
   "@simatic-ax/snippetscollection": 0.0.15
 # Apax scripts
 scripts:
   # set the path to your local TIA Portal installation in the .env file
   export-tialib: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
-  import-tialib: '"$TIA_INSTALL_PATH\\Siemens.Simatic.Lang.Library.Importer.exe"
-    -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
+  import-tialib: '"$TIA_INSTALL_PATH\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
   create-tialib:
     - apax build
     - apax export-tialib
