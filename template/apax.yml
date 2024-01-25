@@ -24,7 +24,7 @@ targets:
   - 'llvm'
 # Dependencies
 devDependencies:
-  "@ax/sdk": 3.0.10
+  "@ax/sdk": 3.0.19
   "@ax/ax2tia": 4.5.4
   "@simatic-ax/snippetscollection": 0.0.15
 # Apax scripts
