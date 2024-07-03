@@ -13,7 +13,9 @@ variables:
   # an arbitrary directory that can be chosen freely
   PATH_NAME: "./bin/handover-folder"
   # you can change the predefined output path where the TIA Portal library will be generated
-  TIA_GLOBAL_LIB_PATH: "./apax-package-name-d7b4b031"
+  TIA_GLOBAL_LIB_PATH: "./bin/TIAPortalLibrary"
+  # set the path to your local TIA Portal installation
+  TIA_INSTALL_PATH: "C:\\Program Files\\Siemens\\Automation\\Portal V18"
   # remove, if you do not want to allow debugging of your code
   APAX_BUILD_ARGS:
     - "--debug"
@@ -29,13 +31,14 @@ devDependencies:
   "@simatic-ax/snippetscollection": 0.0.15
 # Apax scripts
 scripts:
-  # set the path to your local TIA Portal installation in the .env file
-  export-tialib: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
-  import-tialib: '"$TIA_INSTALL_PATH\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH"'
+  # transfer a AX Library to handover library documents for a TIA Libray
+  export-tia-handover-documents: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
+  # convert library handover documents into a global library for the TIA Portal.
+  import-handover-documents-to-tia: '"$TIA_INSTALL_PATH\\bin\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH" -u'
   create-tialib:
     - apax build
-    - apax export-tialib
-    - apax import-tialib
+    - apax export-tia-handover-documents
+    - apax import-handover-documents-to-tia
 # Registry information, where the package will be published/consumed
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
