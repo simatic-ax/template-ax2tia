@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The .gitattributes files have been adapted to correctly consider sub-directories inside the repository and template
+
 ## 2022-02
 
 Version 0.0.1
