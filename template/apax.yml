@@ -27,7 +27,7 @@ targets:
 # Dependencies
 devDependencies:
   "@ax/sdk": 2311.0.1
-  "@ax/ax2tia": 7.0.16
+  "@ax/ax2tia": 10.0.8
   "@simatic-ax/snippetscollection": 0.0.15
 # Apax scripts
 scripts:
