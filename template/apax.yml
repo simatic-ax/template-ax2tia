@@ -26,8 +26,8 @@ targets:
   - 'llvm'
 # Dependencies
 devDependencies:
-  "@ax/sdk": 2411.2.0
-  "@ax/ax2tia": 10.0.8
+  "@ax/sdk": 2504.0.0
+  "@ax/ax2tia": 11.0.18
   "@simatic-ax/snippetscollection": 0.0.15
 # Apax scripts
 scripts:
@@ -49,3 +49,5 @@ files:
   - 'changelog.md'
   - 'doc'
   - 'bin/HandoverLibraryDocuments'
+catalogs:
+  "@ax/simatic-ax": ^2504.0.0
