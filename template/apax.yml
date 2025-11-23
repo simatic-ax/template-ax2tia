@@ -26,9 +26,9 @@ targets:
   - 'llvm'
 # Dependencies
 devDependencies:
-  "@ax/sdk": 2504.0.0
-  "@ax/ax2tia": 11.0.18
-  "@simatic-ax/snippetscollection": 0.0.15
+  "@ax/sdk": 2510.1.0
+  "@ax/ax2tia": 12.0.29
+  "@simatic-ax/snippetscollection": 1.1.0
 # Apax scripts
 scripts:
   # transfer a AX Library to handover library documents for a TIA Libray
@@ -50,4 +50,4 @@ files:
   - 'doc'
   - 'bin/HandoverLibraryDocuments'
 catalogs:
-  "@ax/simatic-ax": ^2504.0.0
+  "@ax/simatic-ax": ^2510.0.0
