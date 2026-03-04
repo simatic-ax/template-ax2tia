@@ -1,6 +1,7 @@
 name: '@simatic-ax/template-ax2tia'
 version: 0.0.0-placeholder
 author: Siemens AG
+description: "Project template for AX and TIA Portal workflow, enabling libraries to be converted from SIMATIC AX to TIA Portal global libraries"
 type: generic
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
