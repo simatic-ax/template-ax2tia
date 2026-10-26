@@ -3,7 +3,6 @@ MakeConfiguration:
     Type: lib
     Targets:
       - s7
-      - axunit-llvm
       - llvm
     StCompiler:
       Debug: true

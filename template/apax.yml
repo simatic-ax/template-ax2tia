@@ -11,9 +11,9 @@ repository:
 # Environment variables
 variables:
   # an arbitrary directory that can be chosen freely
-  PATH_NAME: "./bin/handover-folder"
+  PATH_NAME: "./out/Debug/handoverlibrarydocuments"
   # you can change the predefined output path where the TIA Portal library will be generated
-  TIA_GLOBAL_LIB_PATH: "./bin/TIAPortalLibrary"
+  TIA_GLOBAL_LIB_PATH: "./out/TIAPortalLibrary"
   # set the path to your local TIA Portal installation
   TIA_INSTALL_PATH: "C:\\Program Files\\Siemens\\Automation\\Portal V18"
 # Dependencies
@@ -24,11 +24,11 @@ devDependencies:
 # Apax scripts
 scripts:
   # transfer a AX Library to handover library documents for a TIA Libray
-  export-tia-handover-documents: ax2tia -i ./bin/1500/*.lib -o "$PATH_NAME"
+  export-tia-handover-documents: ax2tia -i ./out/Debug/s7/*.lib -o "$PATH_NAME"
   # convert library handover documents into a global library for the TIA Portal.
   import-handover-documents-to-tia: '"$TIA_INSTALL_PATH\\bin\\Siemens.Simatic.Lang.Library.Importer.exe" -i "$PATH_NAME" -o "$TIA_GLOBAL_LIB_PATH" -u'
   create-tialib:
-    - apax build
+    - apax make
     - apax export-tia-handover-documents
     - apax import-handover-documents-to-tia
 # Registry information, where the package will be published/consumed
