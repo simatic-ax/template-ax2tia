@@ -1,3 +1,4 @@
 .apax
 apax.lock
 template/apax-lock.json
+out/

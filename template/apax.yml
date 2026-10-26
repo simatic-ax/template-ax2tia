@@ -16,18 +16,10 @@ variables:
   TIA_GLOBAL_LIB_PATH: "./bin/TIAPortalLibrary"
   # set the path to your local TIA Portal installation
   TIA_INSTALL_PATH: "C:\\Program Files\\Siemens\\Automation\\Portal V18"
-  # remove, if you do not want to allow debugging of your code
-  APAX_BUILD_ARGS:
-    - "--debug"
-# Variable is set in .env file Example: TIA_PORTAL_INSTALL_PATH="C:\Program Files\Siemens\Automation\Portal V18\Bin"
-targets:
-  - '1500'
-  - 'axunit-llvm'
-  - 'llvm'
 # Dependencies
 devDependencies:
-  "@ax/sdk": 2510.17.0
-  "@ax/ax2tia": 12.3.10
+  "@ax-as/s7-sdk": 2610.0.0
+  "@ax-as/s7-1500-ax2tia": 13.0.82
   "@simatic-ax/snippetscollection": 1.1.0
 # Apax scripts
 scripts:
@@ -48,6 +40,6 @@ files:
   - 'LICENSE.md'
   - 'changelog.md'
   - 'doc'
-  - 'bin/HandoverLibraryDocuments'
+  - 'out/Debug/handoverlibrarydocuments'
 catalogs:
-  "@ax/simatic-ax": ^2510.0.0
+  "@ax-as/s7-catalog": ^2610.0.0
