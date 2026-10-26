@@ -4,3 +4,4 @@ bin
 obj
 testresult
 ./apax-lock.json
+out

@@ -8,7 +8,7 @@ This project template contains some predefined scripts which make your TIAX work
 
 1. If not done, login to the GitHub registry
 
-    More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/doc/personalaccesstoken.md)
+    More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/docs/personalaccesstoken.md)
 
 1. Install the dependencies
 
@@ -77,15 +77,14 @@ This project template contains some predefined scripts which make your TIAX work
 
 ## Create the library
 
-The script `createlib` execute the following steps:
+The script `create-tialib` executes the following steps:
 
-- cleanup old library artifacts
-- compile the ST code (apax build)
-- generate the handover library documents (st2tia)
-- generate the TIA Portal Library .al18 in the folder `bin\TIAPortalGlobalLibrary`
+- compile the ST code (apax make)
+- generate the handover library documents (ax2tia) in the folder `out\Debug\handoverlibrarydocuments`
+- generate the TIA Portal global library in the folder `out\TIAPortalLibrary`
 
-To execute the script, enter `apax createlib' in the terminal
+To execute the script, enter `apax create-tialib` in the terminal
 
 ```sh
-apax createlib
+apax create-tialib
 ```
