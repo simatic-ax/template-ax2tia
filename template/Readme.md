@@ -8,7 +8,7 @@ This project template contains some predefined scripts which make your TIAX work
 
 1. If not done, login to the GitHub registry
 
-    More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/doc/personalaccesstoken.md)
+    More information you'll find [here](https://github.com/simatic-ax/.github/blob/main/docs/personalaccesstoken.md)
 
 1. Install the dependencies
 
