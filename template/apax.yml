@@ -18,7 +18,7 @@ variables:
   TIA_INSTALL_PATH: "C:\\Program Files\\Siemens\\Automation\\Portal V18"
 # Dependencies
 devDependencies:
-  "@ax-as/s7-sdk": 2610.0.0
+  "@ax-as/s7-sdk": 2610.1.0
   "@ax-as/s7-1500-ax2tia": 13.0.82
   "@simatic-ax/snippetscollection": 1.1.0
 # Apax scripts
